@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "Mesh": {
+      "type": "string",
+      "description": "Solid, Liquid, Gas or Heat"
+    },
+    "BigIcon": {
+      "type": "string",
+      "description": "ItemName",
+    },
+	"SmallIcon": {
+      "type": "string",
+      "description": "ItemName Shortend",
+    },
+	
+    "FluidColor": {
+		"type": "object",
+		"properties": {
+			"r": {
+			  "type": "integer",
+			  "minimum": 0,
+			  "maximum": 255
+			},
+			"g": {
+			  "type": "integer",
+			  "minimum": 0,
+			  "maximum": 255
+			},
+			"b": {
+			  "type": "integer",
+			  "minimum": 0,
+			  "maximum": 255
+			},
+			"a": {
+			  "type": "integer",
+			  "minimum": 0,
+			  "maximum": 255
+			}
+		}
+	  },
+	"GasColor": {
+		"type": "object",
+		"properties": {
+			"r": {
+			  "type": "integer",
+			  "minimum": 0,
+			  "maximum": 255
+			},
+			"g": {
+			  "type": "integer",
+			  "minimum": 0,
+			  "maximum": 255
+			},
+			"b": {
+			  "type": "integer",
+			  "minimum": 0,
+			  "maximum": 255
+			},
+			"a": {
+			  "type": "integer",
+			  "minimum": 0,
+			  "maximum": 255
+			}
+		}
+	  },
+  }
+}
