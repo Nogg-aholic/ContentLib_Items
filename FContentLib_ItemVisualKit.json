@@ -8,11 +8,11 @@
     },
     "BigIcon": {
       "type": "string",
-      "description": "ItemName",
+      "description": "ItemName"
     },
 	"SmallIcon": {
       "type": "string",
-      "description": "ItemName Shortend",
+      "description": "ItemName Shortend"
     },
 	
     "FluidColor": {
@@ -64,6 +64,6 @@
 			  "maximum": 255
 			}
 		}
-	  },
+	  }
   }
 }

@@ -8,23 +8,23 @@
     },
     "Name": {
       "type": "string",
-      "description": "ItemName",
+      "description": "ItemName"
     },
 	"NameShort": {
       "type": "string",
-      "description": "ItemName Shortend",
+      "description": "ItemName Shortend"
     },
 	"Description": {
       "type": "string",
-      "description": "Item Description",
+      "description": "Item Description"
     },
 	"ItemCategory": {
       "type": "string",
-      "description": "ItemCategory Class Name, 'Cat_' & '_C' are optionial",
+      "description": "ItemCategory Class Name, 'Cat_' & '_C' are optional"
     },
 	"VisualKit": {
       "type": "string",
-      "description": "VisualKits describe how Items look. VisualKits are defined by ItemDescriptors and can be used by their ClassNames or added via 'Config/ItemVisualKits' Path via their FileNames",
+      "description": "VisualKits describe how Items look. VisualKits are defined by ItemDescriptors and can be used by their ClassNames or added via 'Config/ItemVisualKits' Path via their FileNames"
     },
     "EnergyValue": {
       "type": "number",
@@ -37,7 +37,7 @@
     },
     "CanBeDiscarded": {
       "type": "boolean",
-	  "description": "ItemClass default is true",
+	  "description": "ItemClass default is true"
     },
     "RememberPickUp": {
       "type": "boolean",
@@ -55,16 +55,16 @@
             "type": "object",
 			"properties": {
 				"r": {
-				  "type": "Number",
+				  "type": "number"
 				},
 				"g": {
-				  "type": "Number",
+				  "type": "number"
 				},
 				"b": {
-				  "type": "Number",
+				  "type": "number"
 				},
 				"a": {
-				  "type": "Number",
+				  "type": "number"
 				}
 			},
 			"Description": "RGB float here"
@@ -73,8 +73,8 @@
             "description": "CollectSpeedMultiplier of Items",
             "type": "integer"
           }
-        }
-    }
+      }
+    },
 	"FuelWasteItem":{
 		"type":"object",
 		"description": "only for FGNuclearFuelDescriptor",
