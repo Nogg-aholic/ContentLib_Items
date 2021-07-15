@@ -18,9 +18,9 @@
       "type": "string",
       "description": "Item Description"
     },
-	"ItemCategory": {
+	"Category": {
       "type": "string",
-      "description": "ItemCategory Class Name, 'Cat_' & '_C' are optional"
+      "description": "ItemCategory Class Name, 'Cat_' & '_C' are optional. if the Category does not exist, a new one is created. Optionally a Path can be used to ensure loading"
     },
 	"VisualKit": {
       "type": "string",

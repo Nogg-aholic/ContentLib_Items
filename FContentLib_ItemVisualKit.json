@@ -4,15 +4,15 @@
   "properties": {
     "Mesh": {
       "type": "string",
-      "description": "Solid, Liquid, Gas or Heat"
+      "description": "Path of the Mesh Example : '/Game/FactoryGame/Resource/Parts/PackagedWater/SM_PackedWater_01.SM_PackedWater_01'"
     },
     "BigIcon": {
       "type": "string",
-      "description": "ItemName"
+      "description": "Icon Path of the Big Icon Example '/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_512.LiquidWater_Pipe_512'"
     },
 	"SmallIcon": {
       "type": "string",
-      "description": "ItemName Shortend"
+      "description": "Icon Path of the Small Icon Example: '/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_256.LiquidWater_Pipe_256'"
     },
 	
     "FluidColor": {

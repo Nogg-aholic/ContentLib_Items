@@ -14,6 +14,8 @@ class CONTENTLIB_ITEMS_API UCL_ItemBPFLib : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 	public:
+	
+	// IO Functions originally by Rama!
 	template <class FunctorType>
     class PlatformFileFunctor : public IPlatformFile::FDirectoryVisitor	//GenericPlatformFile.h
     {

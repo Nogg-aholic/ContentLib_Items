@@ -54,19 +54,14 @@ struct  CONTENTLIB_ITEMS_API  FContentLib_ResourceItem
 	GENERATED_BODY()
 	FContentLib_ResourceItem();
 
-
 	static TSharedRef<FJsonObject> GetAsJsonObject(TSubclassOf<UFGResourceDescriptor> Item);
 	static FString GenerateFromClass(TSubclassOf<UFGItemDescriptor> Item);
 
-
-	UPROPERTY( EditDefaultsOnly, Category = "Item|Resource" )
+	UPROPERTY(BlueprintReadWrite)
 	FLinearColor PingColor;
 
-	UPROPERTY( EditDefaultsOnly, Category = "Item|Resource" )
+	UPROPERTY(BlueprintReadWrite)
 	float CollectSpeedMultiplier;
-
-	bool Valid;;
-
 };
 
 USTRUCT(BlueprintType)
@@ -77,10 +72,10 @@ struct  CONTENTLIB_ITEMS_API  FContentLib_NuclearFuelItem
 	static TSharedRef<FJsonObject> GetAsJsonObject(TSubclassOf<UFGItemDescriptorNuclearFuel> Item);
 	static FString GenerateFromClass(TSubclassOf<UFGItemDescriptor> Item);
 
-	UPROPERTY( EditDefaultsOnly, Category = "Nuclear Fuel" )
+	UPROPERTY(BlueprintReadWrite)
 	FString SpentFuelClass;
 
-	UPROPERTY( EditDefaultsOnly, Category = "Nuclear Fuel" )
+	UPROPERTY(BlueprintReadWrite)
 	int32 AmountOfWaste;
 };
 USTRUCT(BlueprintType)
@@ -94,7 +89,7 @@ struct  CONTENTLIB_ITEMS_API  FContentLib_Item
 
 	static FString GenerateFromClass(TSubclassOf<UFGItemDescriptor> Item);
 	static FContentLib_Item GenerateFromString(FString String);
-	void ApplyFromStruct(TSubclassOf<UFGItemDescriptor> Item, const UContentLib_ItemSubsystem * Subsystem) const;
+	void ApplyFromStruct(TSubclassOf<UFGItemDescriptor> Item,  UContentLib_ItemSubsystem* Subsystem);
 
 	
 	UPROPERTY(BlueprintReadWrite)
@@ -107,7 +102,7 @@ struct  CONTENTLIB_ITEMS_API  FContentLib_Item
 	UPROPERTY(BlueprintReadWrite)
 	FString Description;
 	UPROPERTY(BlueprintReadWrite)
-	FString ItemCategory;
+	FString Category;
 	UPROPERTY(BlueprintReadWrite)
 	FString VisualKit;
 	
@@ -125,7 +120,6 @@ struct  CONTENTLIB_ITEMS_API  FContentLib_Item
 	UPROPERTY(BlueprintReadWrite)
 	int32 ResourceSinkPoints;
 
-
 	UPROPERTY(BlueprintReadWrite)
 	FContentLib_ResourceItem ResourceItem;
 
@@ -133,6 +127,18 @@ struct  CONTENTLIB_ITEMS_API  FContentLib_Item
 	FContentLib_NuclearFuelItem FuelWasteItem;
 	
 };
+
+USTRUCT(BlueprintType)
+struct  CONTENTLIB_ITEMS_API  FContentLib_ItemPatch
+{
+	GENERATED_BODY()
+	
+	UPROPERTY(BlueprintReadWrite)
+	TSubclassOf<UFGItemDescriptor> Class;
+	UPROPERTY(BlueprintReadWrite)
+	FString Json;
+};
+
 
 /**
  * 
@@ -169,7 +175,7 @@ public:
 	void ApplyFromStruct(TSubclassOf<UFGItemDescriptor> Item, FContentLib_Item Struct);
 
 	UFUNCTION(BlueprintCallable)
-	TSubclassOf<UFGItemDescriptor> CreateContentLibItem(FString Name, TSubclassOf<UFGItemDescriptor> Class);
+	TSubclassOf<UObject> CreateContentLibItem(FString Name, TSubclassOf<UObject> Class);
 
 
 	UPROPERTY(BlueprintReadOnly)
@@ -185,5 +191,5 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	TMap<TSubclassOf<UFGItemDescriptor>,FString> CreatedItems;
 	UPROPERTY(BlueprintReadWrite)
-	TMap<TSubclassOf<UFGItemDescriptor>,FString> ItemPatches;
+	TArray<FContentLib_ItemPatch> ItemPatches;
 };
