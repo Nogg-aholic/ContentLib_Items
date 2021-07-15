@@ -1,8 +1,8 @@
 {
 	"FileVersion": 3,
 	"Version": 0,
-	"VersionName": "0.1.1",
-	"SemVersion": "0.1.1",
+	"VersionName": "0.1.2",
+	"SemVersion": "0.1.2",
 	"FriendlyName": "ContentLib_Items",
 	"Description": "This is a Mod that allows to easily create text-based (JSON) Items and Overrides!",
 	"Category": "Modding",

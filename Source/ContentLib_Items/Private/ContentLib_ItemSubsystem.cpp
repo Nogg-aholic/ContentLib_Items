@@ -781,13 +781,12 @@ void UContentLib_ItemSubsystem::ApplyFromStruct(const TSubclassOf<UFGItemDescrip
 }
 
 
-TSubclassOf<UObject> UContentLib_ItemSubsystem::CreateContentLibItem(FString Name, TSubclassOf<UObject> Class)
+TSubclassOf<UObject> UContentLib_ItemSubsystem::CreateContentLibItem(FString Name, UClass* ParentClass)
 {
 	if (Name == "" || FindObject<UClass>(ANY_PACKAGE, *Name, false) || FindObject<UClass>(
 		ANY_PACKAGE, *Name.Append("_C"), false))
 		return nullptr;
 	const EClassFlags ParamsClassFlags = CLASS_Native | CLASS_MatchedSerializers;
-	UClass* ParentClass = Class;
 	//Code below is taken from GetPrivateStaticClassBody
 	//Allocate memory from ObjectAllocator for class object and call class constructor directly
 	UClass* ConstructedClassObject = (UClass*)GUObjectAllocator.AllocateUObject(

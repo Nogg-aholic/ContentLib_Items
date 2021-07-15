@@ -175,7 +175,7 @@ public:
 	void ApplyFromStruct(TSubclassOf<UFGItemDescriptor> Item, FContentLib_Item Struct);
 
 	UFUNCTION(BlueprintCallable)
-	TSubclassOf<UObject> CreateContentLibItem(FString Name, TSubclassOf<UObject> Class);
+	TSubclassOf<UObject> CreateContentLibItem(FString Name, UClass* ParentClass);
 
 
 	UPROPERTY(BlueprintReadOnly)
